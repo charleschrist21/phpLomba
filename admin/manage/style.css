@@ -1,0 +1,142 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #ECF0F5;
+}
+
+/* NavBar */
+.title-menu-nav{
+    top: 0;
+    position: fixed;
+    width: 12%;
+    height: 50px;
+    background-color: #367FA9;
+}
+.title-menu-nav h2{
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+.title-nav{
+    z-index: 0;
+    top: 0;
+    position: fixed;
+    height: 50px;
+    left: 12%;
+    width: 90%;
+    background-color: #3B8DBC;
+}
+.title-nav h2{
+    z-index: 1;
+    margin-left: 90% ;
+    margin-top: 10px;
+}
+
+/* SideBar */
+.sidebar{
+    z-index: -1;
+    top: 0;
+    margin-top: 50px;
+    position: fixed;
+    height: 100%;
+    width: 12%;
+    background-color: #222D32;
+}
+
+
+/* Manage */
+.data-post{
+    margin-left: 13%;
+    /* position: absolute; */
+    margin-top: 90px;
+}
+.data-post h1{
+    padding: 0px 0px 0px 20px;
+}
+.table-post{
+    border-top: 5px solid #555555;
+    width: 96%;
+    /* height: 350px; */
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 20px 20px 20px;
+}
+
+table, td, th{
+    border: 3px solid #F4F4F4;
+    border-collapse: collapse;
+    padding: 0px 0px 0px 10px;
+}
+td, th{
+    width: 350px;
+    height: 50px;
+}
+tbody{
+    font-size: 14px;
+}
+thead tr{
+    font-weight: bold;
+    font-size: 16px;
+    border: 5px solid #f4f4f4;
+}
+
+.add-post{
+    border-top: 5px solid #3b8dbc;
+    width: 45%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 50px;
+}
+.edit-post{
+    margin-top: -540px;
+    position: absolute;
+    border-top: 5px solid #3b8dbc;
+    margin-left: 45%;
+    width: 38%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 50px;
+}
+.img{
+    width: 30px;
+}
+.inp-post{
+    height: 20px;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px 0px 0px 5px;
+}
+.text-des{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+.btn-post{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 35px;
+    color: white;
+    border: 0;
+    background: #367FA9;
+    box-shadow: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+.id{
+    width: 50px;
+}
+.edit-admin{
+    margin-top: -400px;
+    position: absolute;
+    border-top: 5px solid #3b8dbc;
+    margin-left: 45%;
+    width: 38%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 50px;
+}
