@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="sidebar">
-        <button class="btn-sidebar" onclick="window.location.href='post.php'" >Post</button>
+        <a href="admin.php">Admin</a>
         <br>
-        <button class="btn-admin" onclick="window.location.href='admin.php'">Admin</button>
+        <a href="post.php">Post</a>
     </div>
 </body>
 </html>

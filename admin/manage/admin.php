@@ -20,6 +20,7 @@
                         <td>ID</td>
                         <td>Username</td>
                         <td>Email</td>
+                        <td>Image</td>
                         <td>Action</td>
                     </tr>
                 </thead>
@@ -31,11 +32,15 @@
                         if(mysqli_num_rows($result) > 0){
                             while($row = mysqli_fetch_array($result)){
                                 $id = $row["id"];
+                                $image = "image/admin/" . $row["image"];
                                 echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['username'] . "</td>";
                                     echo "<td>" . $row['email'] . "</td>";
-                                    echo "<td>" . "<a href=' adminDelete.php? id=$id'>" . "Delete" . "</a>" . " " . " " . "<a href='? id=$id'>" . "Update" . "</a>" . "</td>";
+                                    echo "<td>";
+                                    echo "<img src='$image' class='img'>";
+                                    echo "</td>";
+                                    echo "<td>" . "<a  href=' adminDelete.php? id=$id'>" . "Delete" . "</a>" . " " . " " . "<a href='? id=$id'>" . "Update" . "</a>" . "</td>";
                                 echo "</tr>";
                             }
                         }
@@ -54,6 +59,7 @@
                 <input type="email" class="inp-post" name="email" id=""> <br>
                 <label for="password">Password</label> <br>
                 <input type="password" class="inp-post" name="password" id=""> <br>
+                <input type="file" name="image" id=""> <br>
                 <input type="submit" name="Submit" class="btn-post" id="">
             </form>
 
@@ -70,9 +76,12 @@
                <input type="email" name="email" class="inp-post" id=""> <br>
                <label for="password">Password</label> <br>
                <input type="password" name="password" class="inp-post" id=""> <br>
+               <input type="file" name="image" id=""> <br>
                <input type="submit" name="submit" class="btn-post" value="Submit" id="">
            </form>
         </div>
     </div>
+
 </body>
+
 </html>
