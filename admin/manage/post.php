@@ -31,7 +31,7 @@
                     
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_array($result)){
-                            $image = 'image/'.$row["image"];
+                            $image = 'image/post/'.$row["image"];
                             $id = $row[id];
                             echo "<tr>";
                                 echo "<td>" . $row["id"] . "</td>";
@@ -61,7 +61,7 @@
                 <input type="text" class="inp-post" name="photoBy" id=""> <br>
                 <label for="description">description</label> <br>
                 <textarea name="description" class="text-des" id="" cols="30" rows="10"></textarea> <br>
-                <input type="file" name="image" id=""> <br>
+                <input type="file" name="image" > <br>
                 <input type="submit" class="btn-post" name="submit" id="">
             </form>
             

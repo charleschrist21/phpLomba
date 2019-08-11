@@ -52,7 +52,7 @@
         <div class="add-post">
             <h2>Add</h2>
 
-            <form class="form-add" action="adminInsert.php" method="post">
+            <form class="form-add" action="adminInsert.php" method="post" enctype="multipart/form-data">
                 <label for="username">Username</label> <br>
                 <input type="text" class="inp-post" name="username" id=""> <br>
                 <label for="email">Email</label> <br>
@@ -67,7 +67,7 @@
 
         <div class="edit-admin">
             <h2>Edit Form</h2>
-           <form action="adminUpdate.php" method="post" class="form-add">
+           <form action="adminUpdate.php" method="post" class="form-add" enctype="multipart/form-data">
                <label for="id">Id</label> <br>
                <input type="number" value="<?php echo $_GET["id"]; ?>" class="inp-post" name="id" id=""> <br>
                <label for="username">Username</label> <br>

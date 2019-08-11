@@ -11,12 +11,11 @@ include('../auth.php');
 
                     $postBy = $_SESSION["username"];
 
-                    $fileDir = "image/";
-                    $fileName = trim($title . $postBy . $photoBy . ".jpg");
-                    $targetFile = $fileDir . $fileName;
-
-                
-                    move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile) ;
+                    $targetDir = "image/post/";
+                    $fileName  = trim($title . $photoBy. $postBy . ".jpg");
+                    $targetFile = $targetDir . $fileName;
+            
+                    move_uploaded_file($_FILES["image"]["tmp_name"],$targetFile);
                         $query = "INSERT into `data` (title, description , postBy, photoBy ,image) VALUES('$title','$description','$postBy','$photoBy','$fileName')";
 
                         $result = mysqli_query($conn,$query);

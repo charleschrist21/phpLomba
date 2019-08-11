@@ -12,7 +12,13 @@
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($conn,$password);
 
-        $query = "UPDATE `admin` SET username='$username', email='$email', password='" .md5($password). "' WHERE id='$id' ";
+        $fileDir = "image/admin/";
+        $fileName = trim($username . md5($password) . ".jpg");
+        $targetFile = $fileDir . $fileName;
+
+        move_uploaded_file($_FILES["image"]["tmp_name"],$targetFile);
+
+        $query = "UPDATE `admin` SET username='$username', email='$email', password='" .md5($password). "', image='$fileName'  WHERE id='$id' ";
         $result = mysqli_query($conn,$query);
         header('Location: admin.php');
     }

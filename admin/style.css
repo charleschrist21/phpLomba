@@ -51,6 +51,12 @@ body{
 }
 
 /* admin */
+.auth-salah{
+    position: relative;
+    color: #ff3838;
+    left: 20%;
+    margin-bottom: 20px;
+}
 .login{
     margin: 20px auto;
     width: 300px;
@@ -84,6 +90,7 @@ h1.login-title{
     outline: none;
 }
 .login-button{
+    margin-top: 20px;
     width: 100%;
     height: 50px;
     padding: 0;
