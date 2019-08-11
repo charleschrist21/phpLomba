@@ -40,7 +40,7 @@
                                     echo "<td>";
                                     echo "<img src='$image' class='img'>";
                                     echo "</td>";
-                                    echo "<td>" . "<a  href=' adminDelete.php? id=$id'>" . "Delete" . "</a>" . " " . " " . "<a href='? id=$id'>" . "Update" . "</a>" . "</td>";
+                                    echo "<td>" . "<a  href=' adminDelete.php? id=$id' onclick=\"return confirm('are you sure to delete?')\">" . "Delete" . "</a>" . " " . " " . "<a href='? id=$id'>" . "Update" . "</a>" . "</td>";
                                 echo "</tr>";
                             }
                         }
