@@ -13,6 +13,7 @@
     </div>
     <div class="title-nav">
         <h2><?php echo $_SESSION["username"]; ?></h2>
+        <button onclick="window.location.href='http://localhost:8888/sinaudua/admin/logout.php'">Exit</button>
     </div>
 </body>
 </html>

@@ -4,6 +4,8 @@ include('../auth.php');
                 if(isset($_REQUEST["title"])){
                     $title = stripslashes($_REQUEST["title"]);
                     $title = mysqli_real_escape_string($conn,$title);
+                    $category = stripslashes($_REQUEST["category"]);
+                    $category = mysqli_real_escape_string($conn,$category);
                     $description = stripslashes($_REQUEST["description"]);
                     $description = mysqli_real_escape_string($conn,$description);
                     $photoBy = stripslashes($_REQUEST["photoBy"]);
@@ -16,7 +18,7 @@ include('../auth.php');
                     $targetFile = $targetDir . $fileName;
             
                     move_uploaded_file($_FILES["image"]["tmp_name"],$targetFile);
-                        $query = "INSERT into `data` (title, description , postBy, photoBy ,image) VALUES('$title','$description','$postBy','$photoBy','$fileName')";
+                        $query = "INSERT into `data` (title, category , description , postBy, photoBy ,image) VALUES('$title', '$category' ,'$description','$postBy','$photoBy','$fileName')";
 
                         $result = mysqli_query($conn,$query);
                     

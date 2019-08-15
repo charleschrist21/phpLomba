@@ -7,6 +7,8 @@
         $id = mysqli_real_escape_string($conn,$id);
         $title = stripslashes($_REQUEST["title"]);
         $title = mysqli_real_escape_string($conn,$title);
+        $category = stripslashes($_REQUEST["category"]);
+        $category = mysqli_real_escape_string($conn,$category);
         $description = stripslashes($_REQUEST["description"]);
         $description = mysqli_real_escape_string($conn,$description);
         $photoBy = stripslashes($_REQUEST["photoBy"]);
@@ -14,12 +16,12 @@
 
         $postBy = $_SESSION["username"];
 
-        $fileDir = "image/";
+        $fileDir = "image/post/";
         $fileName = trim($title . $postBy . $photoBy . ".jpg");
         $targetFile = $fileDir . $fileName;
 
         if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)){
-            $query = "UPDATE `data` SET title='$title', description='$description',postBy='$postBy' , photoBy='$photoBy',image='$fileName' WHERE id='$id'";
+            $query = "UPDATE `data` SET title='$title', category='$category' , description='$description',postBy='$postBy' , photoBy='$photoBy',image='$fileName' WHERE id='$id'";
             $result = mysqli_query($conn,$query);
             header('Location: post.php');
         }

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a href="post.php" class="post-btn">POSTINGAN</a>
+        <br>
+        <a href="admin.php" class="admin-btn">ADMIN</a>
     <div class="sidebar">
         <?php 
             require('../db.php');
@@ -22,17 +25,18 @@
             $data = mysqli_fetch_array($result);
 
             $image = "image/admin/" . $data["image"];
-
+            echo "<div class='txt-user-admin'>";
             echo "<h3 class='username-admin'>" . $_SESSION["username"] . "</h3>";
             echo "<div class='icon-online' >" . "" . "</div>";
             echo "<p class='txt-online'>" . "online" .  "</p>";
+            
+            echo "</div>";
             echo "<img src='$image' alt='' class='image-admin'>" . "<br>";
             
         ?>
         <div class="menu"><p>Menu</p></div>
-        <a href="admin.php">Admin</a>
-        <br>
-        <a href="post.php">Post</a>
+        
     </div>
+    
 </body>
 </html>

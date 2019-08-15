@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +14,11 @@
 
         <div class="table-post">
             <h2>Admin</h2>
+            <form method="get" class="form-search">
+                <label for="search">Search</label>
+                <input type="text" name="search" id="">
+                <input type="submit" value="Search" name="" id="">
+            </form>
             <table>
                 <thead>
                     <tr>
@@ -21,11 +26,34 @@
                         <td>Username</td>
                         <td>Email</td>
                         <td>Image</td>
-                        <td>Action</td>
+                        <td class="action-txt">Action</td>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
+                        
+                        if(isset($_GET['search'])){
+                        $search = $_GET['search'];
+                        $query = "SELECT * FROM admin WHERE username like '%".$search."%' ";
+                        $result = mysqli_query($conn,$query);
+
+                        if(mysqli_num_rows($result) > 0){
+                            while($row = mysqli_fetch_array($result)){
+                                $id = $row["id"];
+                                $image = "image/admin/" . $row["image"];
+                                echo "<tr>";
+                                    echo "<td>" . $row['id'] . "</td>";
+                                    echo "<td>" . $row['username'] . "</td>";
+                                    echo "<td>" . $row['email'] . "</td>";
+                                    echo "<td>";
+                                    echo "<img src='$image' class='img'>";
+                                    echo "</td>";
+                                    echo "<td>" . "<a  href=' adminDelete.php? id=$id' class='delete-btn2' onclick=\"return confirm('are you sure to delete?')\">" . "Delete" . "</a>" . " " . " " . "<a href='? id=$id' class='update-btn2 '>" . "Update" . "</a>" . "</td>";
+                                echo "</tr>";
+                            }
+                        }
+                        }else{
+
                         $query = "SELECT * FROM admin";
                         $result = mysqli_query($conn,$query);
 
@@ -40,10 +68,11 @@
                                     echo "<td>";
                                     echo "<img src='$image' class='img'>";
                                     echo "</td>";
-                                    echo "<td>" . "<a  href=' adminDelete.php? id=$id' onclick=\"return confirm('are you sure to delete?')\">" . "Delete" . "</a>" . " " . " " . "<a href='? id=$id'>" . "Update" . "</a>" . "</td>";
+                                    echo "<td>" . "<a  href=' adminDelete.php? id=$id' class='delete-btn2' onclick=\"return confirm('are you sure to delete?')\">" . "Delete" . "</a>" . " " . " " . "<a href='? id=$id' class='update-btn2 '>" . "Update" . "</a>" . "</td>";
                                 echo "</tr>";
                             }
                         }
+                    }
                     ?>
                 </tbody>
             </table>
